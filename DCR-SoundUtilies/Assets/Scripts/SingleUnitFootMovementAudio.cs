@@ -23,15 +23,14 @@ public class SingleUnitFootMovementAudio : MonoBehaviour
         
     }
 
-    void normalize(float input, float min, float max)
+    float normalize(float input, float min, float max)
 	{
-		output = (input - min) / (max - min);
-		return output;
+		return (input - min) / (max - min);
 	}
 
     public void StepTrigger(float velocity)
 	{
-		normVelocity = normalize(velocity, minVelocity, maxVelocity);
+		float normVelocity = normalize(velocity, minVelocity, maxVelocity);
 
 
         //TODO: fill the rest of this
